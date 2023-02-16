@@ -26,7 +26,6 @@ const Item = styled(Paper)(({ theme }) => ({
 export function ActionBar() {
     return (
         <div>
-            <br />
             <Box sx={{ flexGrow: 50 }}>
                 <Grid container spacing={2}>
                     <Grid item xs={4}>

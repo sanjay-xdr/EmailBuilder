@@ -1,7 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
-import { ActionBar } from './components/actionbar';
-import { Header } from './components/header';
+import logo from "./logo.svg";
+import "./App.css";
+import Header from "./components/Header";
+import Display from "./components/Display";
+import Editor from "./components/Editor";
 
 function App() {
   return (
@@ -10,10 +11,16 @@ function App() {
         <div>
           <Header />
         </div>
-        <div style={{ "width": "50%" }}>
-          <ActionBar />
+
+        <div style={{display:'flex', direction:'row'}}>
+          <div style={{ width: 'calc(100% - 471px)'}}>
+            <Display />
+          </div>
+          <div>
+            <Editor />
+          </div>
         </div>
-      </div>z
+      </div>
     </div>
   );
 }
