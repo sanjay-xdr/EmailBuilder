@@ -19,6 +19,8 @@ const Imageformatting = () => {
   // };
   return (
     <Box>
+    <Grid xs={12}>
+
       <Button
         component="label"
         sx={{
@@ -34,6 +36,7 @@ const Imageformatting = () => {
         Upload Image
         <input hidden accept="image/*" multiple type="file" />
       </Button>
+    </Grid>
       <Grid item xs={8} ml="281px" mt="28px">
         <Stack direction="row" spacing={2}>
           <Button

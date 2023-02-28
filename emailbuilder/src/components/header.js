@@ -9,7 +9,7 @@ const Header = () => {
         style={{
           padding: "10px",
           backgroundColor: "#002C3F",
-          width: "100%",
+          // width: "100%",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",

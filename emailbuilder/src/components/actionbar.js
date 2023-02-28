@@ -25,7 +25,8 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export function ActionBar() {
     return (
-        <div>
+        // I added height and margin botton in div tag
+        <div style={{height:'72px', marginBottom:'9px'}}>
             <Box sx={{ flexGrow: 50 }}>
                 <Grid container spacing={2}>
                     <Grid item xs={4}>

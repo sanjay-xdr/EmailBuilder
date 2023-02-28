@@ -1,14 +1,16 @@
-import { Button, ButtonGroup, Box } from "@mui/material";
-import React, { useState } from "react";
-import BgColor from "./FormattingComponent/BgColor";
-import Imageformatting from "./FormattingComponent/Imageformatting";
-import Selecttheme from "./FormattingComponent/Selecttheme";
-import LinkButton from "./FormattingComponent/Linkbutton";
+import { Box, Stack, Grid } from "@mui/material";
+import React, { useContext } from "react";
+import { Contentcontext } from "../context/Context";
 import Structure from "./Structure";
-import Linkbutton from "./FormattingComponent/Linkbutton";
-import TextEditor from "./FormattingComponent/TextEditor";
+import {
+  TextEditor,
+  Linkbutton,
+  BgColor,
+  Imageformatting,
+  Selecttheme,
+} from "./FormattingComponent";
 const Editor = () => {
-  const [area, setArea] = useState(false);
+  const { editorBtn, setEditorBtn } = useContext(Contentcontext);
   const parentWrapper = {
     boxSizing: "border-box",
     width: "471px",
@@ -19,27 +21,68 @@ const Editor = () => {
     borderLeft: "1px solid #e9eceb",
   };
   const buttonstyle = {
-    color:"black",
-    fontWeight:'bold',
+    fontWeight: "bold",
+    fontSize: "16px",
     width: "211.5px",
-    height: "41pz",
+    height: "41px",
     padding: "11px 12px",
-    border:'1px #E9ECEB solid'  //#E9ECEB
+    color: "black",
+    cursor: "pointer",
+    border: "1px #E9ECEB solid", //#E9ECEB
+  };
+  const buttonStyleOnClick = {
+    fontWeight: "bold",
+    fontSize: "16px",
+    width: "211.5px",
+    height: "41px",
+    padding: "11px 12px",
+    color: "white",
+    cursor: "pointer",
+    backgroundColor: "blue",
+    border: "1px #E9ECEB solid", //#E9ECEB
+  };
+
+  // const structureOnClick = {color : val == "s" ? 'white' : 'black', ...buttonstyle}
+  // const buttonOnClick = {color : val == "f" ? 'white' : 'black', ...buttonstyle}
+
+  const onClickHandlerStr = () => {
+    setEditorBtn("s");
+  };
+  const onClickHandlerFor = () => {
+    setEditorBtn("f");
   };
   return (
     <Box sx={parentWrapper}>
-      <Box sx={{marginBottom:'24px'}}>
-        <Button sx={buttonstyle}>
-          Structure
-        </Button>
-        <Button sx={buttonstyle}>Formatting</Button>
-      </Box>
-      {/* <Imageformatting /> */}
-      {/* <BgColor /> */}
-      {/* <Structure /> */}
-      {/* <LinkButton /> */}
-      {/* <Selecttheme /> */}
-      <TextEditor />
+      <Grid>
+        <Stack
+          direction="row"
+          justifyContent="center"
+          sx={{ marginBottom: "24px" }}
+        >
+          {/* <Box bgcolor={val == 's' ? 'blue' :'white'}> */}
+          <button
+            style={editorBtn === "s" ? buttonStyleOnClick : buttonstyle}
+            onClick={onClickHandlerStr}
+          >
+            Structure
+          </button>
+          {/* </Box> */}
+          {/* <Box bgcolor={val == 'f' ? 'blue' :'white'}> */}
+          <button
+            style={editorBtn === "f" ? buttonStyleOnClick : buttonstyle}
+            onClick={onClickHandlerFor}
+          >
+            Formatting
+          </button>
+          {/* </Box> */}
+        </Stack>
+      </Grid>
+      {editorBtn === "f" && <TextEditor />}
+      {editorBtn === "f" && <Imageformatting />}
+      {editorBtn === "f" && <BgColor />}
+      {editorBtn === "s" && <Structure />}
+      {editorBtn === "f" && <Linkbutton />}
+      {editorBtn === "f" && <Selecttheme />}
     </Box>
   );
 };
