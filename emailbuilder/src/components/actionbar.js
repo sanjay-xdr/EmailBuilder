@@ -23,10 +23,10 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const buttonstyle = {
-  paddingRight:'16px',
-  paddingLeft:'12px',
+  paddingRight: "16px",
+  paddingLeft: "12px",
   display: "flex",
-  gap:'12px',
+  gap: "12px",
   alignItems: "center",
   height: "40px",
   background: "transparent",
@@ -50,11 +50,12 @@ const sendButtonStyle = {
   width: "88px",
 };
 
-const inputStyle ={
-  fontSize:'18px',
-  border:'none',
-  fontWeight:'500',
-}
+const inputStyle = {
+  fontSize: "18px",
+  border: "none",
+  fontWeight: "500",
+  backgroundColor:"#f5f5f5",
+};
 
 export function ActionBar() {
   return (
@@ -74,7 +75,7 @@ export function ActionBar() {
         {/* <span style={{ fontSize: "18px", fontWeight: "500" }}>
           Win Announcement
         </span> */}
-        <input type='text' placeholder="Win Announcement" style={inputStyle}/>
+        <input type="text" placeholder="Win Announcement" style={inputStyle} />
       </div>
       <div style={{ display: "flex", gap: "12px" }}>
         <button style={buttonstyle}>

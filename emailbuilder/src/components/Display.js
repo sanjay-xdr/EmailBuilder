@@ -18,7 +18,7 @@ const Display = () => {
         height: "100%",
         position:'relative',
         overflowY:'auto',
-        height:'85%',
+        height:'100vh',
         paddingBottom:'20px', 
         // border:'1px solid black',
       }}

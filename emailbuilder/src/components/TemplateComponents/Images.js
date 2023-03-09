@@ -10,7 +10,7 @@ const Images = () => {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    gap: "8px",
+    gap: "6px",
     width: "600px",
     height: "201px",
     backgroundColor: "#F5F5F5",
@@ -30,13 +30,14 @@ const Images = () => {
       <img src={ImageIcon} alt="image icon" />
       <Typography
         sx={{
-          fontSize: "14px",
-          lineHeight: "16px",
+          fontSize: "20px",
+          lineHeight: "23.44px",
           color: "#77777A",
           fontWeight: "bold",
+          // border:'1px solid black'
         }}
       >
-        Drag your image here or browse
+        Add your header image here
       </Typography>
       <Typography
         sx={{
@@ -44,9 +45,10 @@ const Images = () => {
           lineHeight: "16px",
           color: "#77777A",
           fontWeight: "bold",
+          // border:'1px solid black'
         }}
       >
-        image size 600x270
+        Recommended image size (in pixel) 600x270
       </Typography>
     </div>
   );

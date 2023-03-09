@@ -77,32 +77,32 @@ const Editor = () => {
   };
   return (
     <Box sx={parentWrapper}>
-        <Stack
-          direction="row"
-          justifyContent="center"
-          sx={{ marginBottom: "24px" }}
+      <Stack
+        direction="row"
+        justifyContent="center"
+        sx={{ marginBottom: "24px" }}
+      >
+        <button
+          style={editorBtn === "s" ? structureStyleOnClick : structurestyle}
+          onClick={onClickHandlerStr}
         >
-          <button
-            style={editorBtn === "s" ? structureStyleOnClick : structurestyle}
-            onClick={onClickHandlerStr}
-          >
-            Structure
-          </button>
-          <button
-            style={editorBtn === "f" ? formattingStyleOnClick : formattingstyle}
-            onClick={onClickHandlerFor}
-          >
-            Formatting
-          </button>
-        </Stack>
-      {editorBtn === "s" && <Structure />}
-      {editorBtn === "f" && formatting === "texteditor" && <TextEditor />}
-      {editorBtn === "f" && formatting === "imageformatting" && (
-        <Imageformatting />
-      )}
-      {editorBtn === "f" && formatting === "bgcolor" && <BgColor />}
-      {editorBtn === "f" && formatting === "linkbutton" && <Linkbutton />}
-      {editorBtn === "f" && formatting === "selecttheme" && <Selecttheme />}
+          Widget
+        </button>
+        <button
+          style={editorBtn === "f" ? formattingStyleOnClick : formattingstyle}
+          onClick={onClickHandlerFor}
+        >
+          Formatting
+        </button>
+      </Stack>
+        {editorBtn === "s" && <Structure />}
+        {editorBtn === "f" && formatting === "texteditor" && <TextEditor />}
+        {editorBtn === "f" && formatting === "imageformatting" && (
+          <Imageformatting />
+        )}
+        {editorBtn === "f" && formatting === "bgcolor" && <BgColor />}
+        {editorBtn === "f" && formatting === "linkbutton" && <Linkbutton />}
+        {editorBtn === "f" && formatting === "selecttheme" && <Selecttheme />}
     </Box>
   );
 };

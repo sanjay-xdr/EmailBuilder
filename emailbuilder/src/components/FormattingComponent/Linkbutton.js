@@ -24,7 +24,7 @@ const Linkbutton = () => {
     setFontFamily(event.target.value);
   };
   return (
-    <Box ml="24px">
+    <Box ml="24px" sx={{ marginLeft: "32px", width: "423px", margin: "auto" }}>
       <Stack ml="8px" mb="32px" direction="row" alignItems="center">
         <Typography mr="16px" variant="body1">
           Font Family:

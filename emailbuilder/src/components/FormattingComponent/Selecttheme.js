@@ -7,7 +7,7 @@ import React from "react";
 
 const Selecttheme = () => {
   return (
-    <Box sx={{ marginLeft: "32px" }}>
+    <Box sx={{ marginLeft: "32px", width: "423px", margin: "auto" }}>
       <Typography sx={{ textAlign: "left", marginBottom: "12px" }} variant="h6">
         Select Theme
       </Typography>

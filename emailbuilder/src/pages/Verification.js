@@ -4,7 +4,7 @@ import CGLogoDark from "../Images/CG-logo-dark.svg";
 import { Link } from "react-router-dom";
 import { BiLeftArrowAlt } from "react-icons/bi";
 
-const Varification = () => {
+const Verification = () => {
   const spanStyle = {
     fontSize: "13px",
     lineHeight: "16px",
@@ -161,4 +161,4 @@ const Varification = () => {
   );
 };
 
-export default Varification;
+export default Verification;

@@ -11,18 +11,19 @@ const Content = () => {
         setFormatting("texteditor");
       }}
       style={{
-        width: "500px",
-        border: "2px dashed black",
-        height: "100px",
-        backgroundColor: "blue",
+        border: "1px solid black",
+        backgroundColor: "none",
         margin: "auto",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        textAlign:'left',
+        padding:'24px',
+        // maxWidth:'600px',
+        height:'auto'
       }}
     >
-      {" "}
-      content
+    Dear CG Team,
+    <br />
+    <br />
+     It gives me immense pleasure to announce that we won the following project and added the new team members. It gives me immense pleasure to announce that we won the following project and added the new team members.
     </div>
   );
 };

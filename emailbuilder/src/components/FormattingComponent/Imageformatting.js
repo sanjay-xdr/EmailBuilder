@@ -18,7 +18,7 @@ const Imageformatting = () => {
   //   axios.post("api/uploadfile", formData);
   // };
   return (
-    <Box>
+    <Box sx={{ marginLeft: "32px", width: "423px", margin: "auto" }}>
     <Grid xs={12}>
 
       <Button
