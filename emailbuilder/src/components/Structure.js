@@ -7,27 +7,28 @@ import Calltoaction from "../Images/Calltoaction.svg";
 import { Contentcontext } from "../context/Context";
 
 const Structure = () => {
-  const { arr, setArr, onClickHandler } = useContext(Contentcontext);
+  const { arr, setArr } = useContext(Contentcontext);
+  const onClickHandler = (e) => {
+    const val = e.currentTarget.innerText;
+    setArr((oldarr) => {
+      return [...oldarr, val];
+    });
+    console.log(arr);
+  };
 
-  // const onClickHandler = (e) => {
-  //   const temp = arr;
-  //   temp.push(e.currentTarget.innerText);
-  //   setArr(temp);
-  //   
-  // };
   const getDraggables = (text, textimg) => {
     return (
       // ondrag start put the cursor to grabbing and release it onDragDrop
-      <div draggable onClick={onClickHandler} >
+      <div draggable onClick={onClickHandler} style={{width:'84.55%'}}>
         <Box
-          width="391px"
-          height="52px"
+        draggable="true"
           sx={{
+            borderRadius:'4px',
+            height: "52px",
+            width:'100%',
             display: "flex",
             border: "1px solid #E9ECEB",
             alignItems: "center",
-            marginLeft: "14px",
-            marginBottom: "12px",
             cursor: "grab",
           }}
         >
@@ -43,8 +44,13 @@ const Structure = () => {
   };
   return (
     <Box
-      display="flex"
-      sx={{ flexDirection: "column", alignItems: "center", marginTop: "" }}
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        marginTop: "",
+        gap:'12px'
+      }}
     >
       {getDraggables("Content", { Tt }.Tt)}
       {getDraggables("Image", { Landscape }.Landscape)}

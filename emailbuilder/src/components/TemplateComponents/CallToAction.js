@@ -1,6 +1,8 @@
-import React from "react";
+import React, {useContext} from "react";
+import { Contentcontext } from "../../context/Context";
 
 const CallToAction = () => {
+  const { setEditorBtn, setFormatting } = useContext(Contentcontext);
   const stylebtn = {
     display: "flex",
     flexDirection: "row",
@@ -14,10 +16,22 @@ const CallToAction = () => {
     order: "0",
     color: "white",
     flexGrow: "0",
-    textAlign:"center",
-    margin:"auto"
+    textAlign: "center",
+    margin: "auto",
   };
-  return <div draggable style={stylebtn}>CallToAction</div>;
+  return (
+    <div
+      draggable
+      style={stylebtn}
+      onClick={(e) => {
+        e.stopPropagation();
+        setEditorBtn("f");
+        setFormatting("linkbutton");
+      }}
+    >
+      CallToAction
+    </div>
+  );
 };
 
 export default CallToAction;

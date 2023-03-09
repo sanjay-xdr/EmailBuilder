@@ -139,8 +139,8 @@ const editorConfig = {
   uploader: {
     insertImageAsBase64URI: true,
   },
-  width: 800,
-  height: '300px',
+  width: '423px',
+  height: '400px',
 };
 
 export default function TextEditor() {
@@ -157,7 +157,7 @@ export default function TextEditor() {
         config={editorConfig}
         onChange={(value) => setData(value)}
       />
-      <div>{data}</div>
+      {/* <div>{data}</div> */}
     </div>
   );
 }

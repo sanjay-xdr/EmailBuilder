@@ -1,56 +1,21 @@
-import logo from "./logo.svg";
-import { useState } from "react";
 import "./App.css";
-import Header from "./components/Header";
-import Display from "./components/Display";
-import Editor from "./components/Editor";
-import { Grid, Box } from "@mui/material";
-import Template from "./components/Template";
-import Context from "./context/Context";
-
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
+import Varification from "./pages/Varification";
+import ForgotPassword from "./pages/ForgotPassword";
+import { Route, Routes } from "react-router-dom";
+import CreateNewPassword from "./pages/CreateNewPassword";
 function App() {
-  const[arr, setArr] = useState([]);
   return (
-    <Context>
-      <div>
-        {/* <Header /> */}
-        {/* <Grid container>
-      <Grid item xs={7.2}>
-        <Display />
-      </Grid>
-      <Grid item xs={4.8}>
-        <Editor />
-      </Grid>
-    </Grid> */}
-
-        {/* <Box >
-          <Grid container>
-            <Grid item xs={8}>
-              <Display />
-            </Grid>
-            <Grid item xs={4}>
-              <Editor />
-            </Grid>
-          </Grid>
-        </Box> */}
-
-        <div className="App">
-          <div>
-            <div>
-              <Header />
-            </div>
-            <div style={{ display: "flex", direction: "row" }}>
-              <div style={{ width: "70%" }}>
-                <Display />
-              </div>
-              <div style={{position:"sticky"}}>
-                <Editor  />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </Context>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<SignUp />} />
+      <Route path="/varification" element={<Varification />} />
+      <Route path="/forgotpassword" element={<ForgotPassword />} />
+      <Route path="/newpassword" element={<CreateNewPassword />} />
+    </Routes>
   );
 }
 

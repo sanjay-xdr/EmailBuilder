@@ -9,18 +9,17 @@ import {
   Imageformatting,
   Selecttheme,
 } from "./FormattingComponent";
+
 const Editor = () => {
-  const { editorBtn, setEditorBtn } = useContext(Contentcontext);
+  const { editorBtn, setEditorBtn, formatting } = useContext(Contentcontext);
   const parentWrapper = {
-    boxSizing: "border-box",
-    width: "471px",
+    width: "100%",
     height: "836px",
-    left: "0px",
-    top: "0px",
     background: "#ffffff",
-    borderLeft: "1px solid #e9eceb",
+    borderRight: "2px solid #E9ECEB",
+    paddingTop: "16px",
   };
-  const buttonstyle = {
+  const structurestyle = {
     fontWeight: "bold",
     fontSize: "16px",
     width: "211.5px",
@@ -28,9 +27,10 @@ const Editor = () => {
     padding: "11px 12px",
     color: "black",
     cursor: "pointer",
+    borderRadius: "4px 0 0 4px",
     border: "1px #E9ECEB solid", //#E9ECEB
   };
-  const buttonStyleOnClick = {
+  const structureStyleOnClick = {
     fontWeight: "bold",
     fontSize: "16px",
     width: "211.5px",
@@ -39,6 +39,30 @@ const Editor = () => {
     color: "white",
     cursor: "pointer",
     backgroundColor: "blue",
+    borderRadius: "4px 0 0 4px",
+    border: "1px #E9ECEB solid", //#E9ECEB
+  };
+  const formattingstyle = {
+    fontWeight: "bold",
+    fontSize: "16px",
+    width: "211.5px",
+    height: "41px",
+    padding: "11px 12px",
+    color: "black",
+    cursor: "pointer",
+    borderRadius: "0 4px 4px 0",
+    border: "1px #E9ECEB solid", //#E9ECEB
+  };
+  const formattingStyleOnClick = {
+    fontWeight: "bold",
+    fontSize: "16px",
+    width: "211.5px",
+    height: "41px",
+    padding: "11px 12px",
+    color: "white",
+    cursor: "pointer",
+    backgroundColor: "blue",
+    borderRadius: "0 4px 4px 0",
     border: "1px #E9ECEB solid", //#E9ECEB
   };
 
@@ -53,36 +77,32 @@ const Editor = () => {
   };
   return (
     <Box sx={parentWrapper}>
-      <Grid>
         <Stack
           direction="row"
           justifyContent="center"
           sx={{ marginBottom: "24px" }}
         >
-          {/* <Box bgcolor={val == 's' ? 'blue' :'white'}> */}
           <button
-            style={editorBtn === "s" ? buttonStyleOnClick : buttonstyle}
+            style={editorBtn === "s" ? structureStyleOnClick : structurestyle}
             onClick={onClickHandlerStr}
           >
             Structure
           </button>
-          {/* </Box> */}
-          {/* <Box bgcolor={val == 'f' ? 'blue' :'white'}> */}
           <button
-            style={editorBtn === "f" ? buttonStyleOnClick : buttonstyle}
+            style={editorBtn === "f" ? formattingStyleOnClick : formattingstyle}
             onClick={onClickHandlerFor}
           >
             Formatting
           </button>
-          {/* </Box> */}
         </Stack>
-      </Grid>
-      {editorBtn === "f" && <TextEditor />}
-      {editorBtn === "f" && <Imageformatting />}
-      {editorBtn === "f" && <BgColor />}
       {editorBtn === "s" && <Structure />}
-      {editorBtn === "f" && <Linkbutton />}
-      {editorBtn === "f" && <Selecttheme />}
+      {editorBtn === "f" && formatting === "texteditor" && <TextEditor />}
+      {editorBtn === "f" && formatting === "imageformatting" && (
+        <Imageformatting />
+      )}
+      {editorBtn === "f" && formatting === "bgcolor" && <BgColor />}
+      {editorBtn === "f" && formatting === "linkbutton" && <Linkbutton />}
+      {editorBtn === "f" && formatting === "selecttheme" && <Selecttheme />}
     </Box>
   );
 };

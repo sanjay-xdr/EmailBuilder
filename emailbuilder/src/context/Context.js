@@ -5,20 +5,17 @@ export const Contentcontext = createContext();
 const Context = ({ children }) => {
   const [arr, setArr] = useState([]);
   const [editorBtn, setEditorBtn] = useState('s');
-  const onClickHandler = (e) => {
-    const temp = arr;
-    temp.push(e.currentTarget.innerText);
-    setArr(temp);
-    console.log(arr);
-  };
+  const [formatting, setFormatting] = useState('selecttheme');
+  
   return (
     <Contentcontext.Provider
       value={{
         arr,
         setArr,
-        onClickHandler,
         setEditorBtn, 
         editorBtn,
+        formatting,
+        setFormatting
       }}
     >
       {children}

@@ -1,5 +1,6 @@
 import CG_Logo_GoldNavy_header from "../utils/CG_Logo_GoldNavy_header.svg";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { MdAccountCircle } from "react-icons/md";
+import { AiFillCaretDown } from "react-icons/ai";
 
 const Header = () => {
   return (
@@ -7,25 +8,37 @@ const Header = () => {
       {/* <div>Hello World</div> */}
       <div
         style={{
-          padding: "10px",
           backgroundColor: "#002C3F",
-          // width: "100%",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          marginBottom:"16px",
+          height: "64px",
         }}
       >
-        <div style={{ textAlign: "left" }}>
+        <div
+          style={{
+            textAlign: "left",
+            marginLeft: "28px",
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
           {/* <h1>Hello World</h1> */}
           <img src={CG_Logo_GoldNavy_header}></img>
         </div>
-        <div style={{ textAlign: "right" }}>
-          <div style={{ paddingRight: "20px" }}>
-            <AccountCircleIcon
-              sx={{ color: "white", fontSize: 33 }}
-            ></AccountCircleIcon>
-          </div>
+        <div
+          style={{
+            width: "54px",
+            textAlign: "right",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginRight: "27px",
+            color: "white",
+          }}
+        >
+          <MdAccountCircle size="32px" />
+          <AiFillCaretDown size="10px" />
         </div>
       </div>
     </>
